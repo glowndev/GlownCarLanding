@@ -31,4 +31,4 @@ jobs:
         run: npm run test
 
       - name: Run Angular App
-        run: ng serve --prod
+        run: ng serve --configuration=production
