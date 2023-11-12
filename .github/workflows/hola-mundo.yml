@@ -1,23 +1,22 @@
-name: CI
-
+name: Learning GitHub Actions
+run-name: I am learning GitHub Actions!
 on:
   push:
-    branches: [main , github-actions ]
-  pull_request:
-    branches: [main , github-actions ]
+    branches:
+      - main
+      - github-actions
 
 jobs:
-  build:
+  hola-mundo:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
+      - name: Checkout
         uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18.x'
+          node-version: '14'
 
       - name: Install Angular CLI
         run: npm install -g @angular/cli@15.1.2
@@ -30,3 +29,6 @@ jobs:
 
       - name: Run Tests
         run: ng test
+
+      - name: Run Angular App
+        run: ng serve --prod
