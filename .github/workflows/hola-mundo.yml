@@ -1,5 +1,5 @@
-name: Learning GitHub Actions
-run-name: I am learning GitHub Actions!
+name: CI/CD for Angular
+
 on:
   push:
     branches:
@@ -7,8 +7,9 @@ on:
       - github-actions
 
 jobs:
-  hola-mundo:
+  build-and-test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -25,10 +26,7 @@ jobs:
         run: npm install
 
       - name: Build Angular App
-        run: ng build --configuration production
+        run: ng build --configuration=production
 
       - name: Run Tests
         run: npm run test
-
-      - name: Run Angular App
-        run: ng serve --configuration=production
