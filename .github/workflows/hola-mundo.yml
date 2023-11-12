@@ -28,7 +28,7 @@ jobs:
         run: ng build --configuration production
 
       - name: Run Tests
-        run: npm run test:watch
+        run: npm run test
 
       - name: Run Angular App
         run: ng serve --prod
